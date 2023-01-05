@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
 
 function App() {
   const [data, setData] = useState([]);
@@ -28,9 +30,13 @@ function App() {
       {Array(data)
         .fill(0)
         .map((_, i) => (
-          <button onClick={handleClick} >{i + 1}</button>
+          <div className="m-2">
+            <Button variant="success" size="slg" onClick={handleClick}>
+              {i + 1}
+            </Button>
+          </div>
         ))}
-       {JSON.stringify(userData)}
+      {JSON.stringify(userData)}
     </div>
   );
 }
