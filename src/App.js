@@ -49,7 +49,7 @@ const card = () => {
     <div>
       <Container>
         <Col>
-          <Row className="justify-content-center">
+          <Row className="m-4 justify-content-center">
             {id && (
               <Card
                 display="flex"
@@ -88,34 +88,28 @@ const card = () => {
                 />
                 <Card.Body>
                   <Card.Title className="justify-content-center">
-                    Click on
-                  the button to see a particular user's details!</Card.Title>
+                    Click on the button to see a particular user's details!
+                  </Card.Title>
                 </Card.Body>
               </Card>
             )}
           </Row>
-          <Row sm={6}>
-            {Array(data)
-              .fill(0)
-              .map((_, i) => (
-                <div>
-                  <Container>
-                    <Row>
-                      <Button
-                        className="m-1"
-                        variant="success"
-                        size="sm"
-                        onClick={handleClick}
-                      >
-                        {i + 1}
-                      </Button>
-                    </Row>
-                  </Container>
-                </div>
-              ))}
-          </Row>
         </Col>
       </Container>
+      <div class="d-flex justify-content-center">
+        {Array(data)
+          .fill(0)
+          .map((_, i) => (
+            <Button
+              className="m-2"
+              variant="success"
+              size="lg"
+              onClick={handleClick}
+            >
+              {i + 1}
+            </Button>
+          ))}
+      </div>
     </div>
   );
 }
