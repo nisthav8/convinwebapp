@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Nav from "react-bootstrap/Nav";
-import { Container,Col,Row,Image} from "react-bootstrap";  
+import { Container,Col,Row,Image,Spinner} from "react-bootstrap";  
 import { useSSRSafeId } from "@react-aria/ssr";
 
 function App() {
@@ -68,11 +68,11 @@ const card = () => {
                 <Card.Body>
                   <Card.Title>
                     {" "}
-                    <Card.Text>Id:{JSON.stringify(id)}</Card.Text>{" "}
+                    <Card.Text>Id: {id}</Card.Text>{" "}
                   </Card.Title>
-                  <Card.Text>First Name: {JSON.stringify(firstName)}</Card.Text>
-                  <Card.Text> LastName: {JSON.stringify(lastName)}</Card.Text>
-                  <Card.Text>E-mail: {JSON.stringify(email)}</Card.Text>
+                  <Card.Text>First Name: {firstName}</Card.Text>
+                  <Card.Text> Last Name: {lastName}</Card.Text>
+                  <Card.Text>E-mail: {email}</Card.Text>
                 </Card.Body>
               </Card>
             )}
@@ -109,6 +109,7 @@ const card = () => {
               {i + 1}
             </Button>
           ))}
+      
       </div>
     </div>
   );
